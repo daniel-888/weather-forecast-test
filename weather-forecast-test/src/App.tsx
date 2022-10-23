@@ -1,8 +1,27 @@
 import React from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
+const options = {
+  method: 'GET',
+  url: 'https://dark-sky.p.rapidapi.com/%7Blatitude%7D,%7Blongitude%7D',
+  params: { units: 'auto', lang: 'en' },
+  headers: {
+    'X-RapidAPI-Key': '95eb2434d5mshf32530b34122ca2p16f777jsn9d04a477a5d3',
+    'X-RapidAPI-Host': 'dark-sky.p.rapidapi.com'
+  }
+};
+
 function App() {
+  React.useEffect(() => {
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+  })
+
   return (
     <div className="App">
       <header className="App-header">
