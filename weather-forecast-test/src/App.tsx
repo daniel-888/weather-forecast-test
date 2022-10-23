@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import logo from './logo.svg';
+import style from './styles/style.less';
 import './App.css';
 
 const options = {
@@ -26,8 +27,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+        <p className={style.header}>
+          Edit <code>src/App.tsx</code> and save to reload.1
         </p>
         <a
           className="App-link"
